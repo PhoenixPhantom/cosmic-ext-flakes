@@ -11,6 +11,8 @@ This package currently provides packages for the following applications:
  * [cosmic-ext-applet-ollama](https://github.com/elevenhsoft/cosmic-applet-ollama)
  * [cosmic-ext-applet-privacy-indicator](https://github.com/D-Brox/cosmic-ext-applet-privacy-indicator)*
  * [observatory](https://github.com/cosmic-utils/observatory)
+   
+\* Package currently untested
 
 ## Usage
 
@@ -24,15 +26,18 @@ If you have an existing `configuration.nix`, you can use the `cosmic-ext` flake 
 >   <img alt="Info" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/info.svg">
 > </picture><br>
 >
-> If switching from traditional evaluation to flakes, `nix-channel` will no longer have any effect on the nixpkgs your system is built with, and therefore `nixos-rebuild --upgrade` will also no longer have any effect. You will need to use `nix flake update` from your flake directory to update nixpkgs and nixos-cosmic.
+> If switching from traditional evaluation to flakes, `nix-channel` will no longer have any effect on the nixpkgs your system is built with, and therefore `nixos-rebuild --upgrade` will also no longer have any effect. You will need to use `nix flake update` from your flake directory to update nixpkgs and cosmic-ext-flakes.
 
 
 ```nix
 # flake.nix
 {
   inputs = {
-    nixpkgs.follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
-    cosmic-ext.url = "github:PhoenixPhantom/cosmic-ext-flakes";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # or "github:nixos/nixpkgs/nixos-unstable"
+    cosmic-ext = {
+        url = "github:PhoenixPhantom/cosmic-ext-flakes";
+        inputs.nixpkgs.follows = "nixpkgs";  # make cosmic-ext use the same version of nixpkgs as the rest of your system
+    };
   };
 
   outputs = { self, nixpkgs, cosmic-ext }: {
