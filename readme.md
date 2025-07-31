@@ -5,9 +5,9 @@ environment.
 ## Packaged extensions
 This package currently provides packages for the following applications:
  * [cosmic-ext-applet-caffeine](https://github.com/tropicbliss/cosmic-ext-applet-caffeine)
- * [cosmic-ext-clippboard-manager](https://github.com/wiiznokes/clipboard-manager)
+ * [cosmic-ext-clippboard-manager](https://github.com/cosmic-utils/clipboard-manager)
  * [cosmic-ext-applet-emoji-selector](https://github.com/leb-kuchen/cosmic-applet-emoji-selector)
- * [cosmic-ext-external-monitor-brightness](https://github.com/maciekk64/cosmic-ext-applet-external-monitor-brightness)
+ * [cosmic-ext-external-monitor-brightness](https://github.com/cosmic-utils/cosmic-ext-applet-external-monitor-brightness)
  * [cosmic-ext-applet-ollama](https://github.com/elevenhsoft/cosmic-applet-ollama)
  * [cosmic-ext-applet-privacy-indicator](https://github.com/D-Brox/cosmic-ext-applet-privacy-indicator)*
  * [observatory](https://github.com/cosmic-utils/observatory)
