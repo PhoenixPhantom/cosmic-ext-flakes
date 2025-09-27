@@ -1,0 +1,56 @@
+name: Cosmic
+
+on:
+  schedule:
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update Flakes
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: DeterminateSystems/nix-installer-action@v20
+        with:
+          diagnostic-endpoint: ''
+          source-url: 'https://install.lix.systems/lix/lix-installer-x86_64-linux'
+
+      - uses: cachix/cachix-action@v16
+        with:
+          name: cosmic
+
+      - name: Configure git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Build update script
+        run: nix -vL build --show-trace .#update
+
+      - name: Run update script
+        run: result/bin/cosmic-unstable-update
+
+      - name: Clean git repository
+        run: |
+          git clean -fdx
+          git reset --hard HEAD
+
+      - id: create-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update_cosmic_action
+          delete-branch: true
+          committer: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          commit-message: 'pkgs: update extensions'
+          title: 'pkgs: update extensions'
+          labels: 'dependencies'
+          body: |
+            Automated bump of COSMIC extension packages
