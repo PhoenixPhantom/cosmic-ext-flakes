@@ -45,7 +45,7 @@ jobs:
       - id: create-pr
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: update_cosmic_action
+          branch: update_cosmic_ext_action
           delete-branch: true
           committer: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
           author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
