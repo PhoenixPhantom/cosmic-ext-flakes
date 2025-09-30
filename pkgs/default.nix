@@ -44,8 +44,4 @@ let
     }) pkgsPaths
   );
 in
-finalPkgs // (
-  if prev.config.allowAliases or pkgs.config.allowAliases or true then
-    import ./aliases.nix (if prev != null then prev // finalPkgs else pkgs // finalPkgs)
-  else { }
-)
+finalPkgs 
