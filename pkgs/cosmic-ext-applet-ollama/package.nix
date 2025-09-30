@@ -12,7 +12,7 @@
 }:
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-ollama";
-  version = "0-unstable-2025-06-23";
+  version = "0-unstable-2025-07-20";
 
   src = fetchFromGitHub {
     owner = "PhoenixPhantom"; # Use custom fork to prevent the vendoring errors until it's fixed upstream
