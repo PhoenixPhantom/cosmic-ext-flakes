@@ -53,7 +53,7 @@ rustPlatform.buildRustPackage {
     description = "Ollama applet for COSMIC Desktop";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
-      PhoenixPhantom
+      #PhoenixPhantom
     ];
     platforms = lib.platforms.linux;
     mainProgram = "cosmic-ext-applet-ollama";

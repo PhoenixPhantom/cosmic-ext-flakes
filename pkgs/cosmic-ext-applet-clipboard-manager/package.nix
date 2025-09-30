@@ -56,7 +56,7 @@ rustPlatform.buildRustPackage rec {
     description = "Clipboard manager for the COSMIC Desktop Environment";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
-      PhoenixPhantom
+      #PhoenixPhantom
     ];
     platforms = lib.platforms.linux;
     mainProgram = "cosmic-ext-applet-clipboard-manager";

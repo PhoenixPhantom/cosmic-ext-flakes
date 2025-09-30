@@ -62,7 +62,7 @@ rustPlatform.buildRustPackage {
     description = "Privacy indicator for the COSMIC DE";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
-      PhoenixPhantom
+      #PhoenixPhantom
     ];
     platforms = lib.platforms.linux;
     mainProgram = "cosmic-ext-applet-privacy-indicator";

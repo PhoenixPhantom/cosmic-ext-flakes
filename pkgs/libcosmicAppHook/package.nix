@@ -71,7 +71,7 @@ makeSetupHook {
   meta = {
     description = "Setup hook for configuring and wrapping applications based on libcosmic";
     maintainers = with lib.maintainers; [
-      PhoenixPhantom
+      #PhoenixPhantom
     ];
   };
 } ./libcosmic-app-hook.sh

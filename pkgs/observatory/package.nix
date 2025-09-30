@@ -98,7 +98,7 @@ rustPlatform.buildRustPackage rec {
       mit
     ];
     maintainers = with lib.maintainers; [
-      PhoenixPhantom
+      #PhoenixPhantom
     ];
     platforms = lib.platforms.linux;
     mainProgram = "observatory";

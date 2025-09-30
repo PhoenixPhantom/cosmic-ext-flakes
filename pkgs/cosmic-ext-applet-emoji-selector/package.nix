@@ -58,7 +58,7 @@ rustPlatform.buildRustPackage {
       mit
     ];
     maintainers = with lib.maintainers; [
-      PhoenixPhantom
+      #PhoenixPhantom
     ];
     platforms = lib.platforms.linux;
     mainProgram = "cosmic-ext-applet-emoji-selector";
