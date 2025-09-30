@@ -127,44 +127,20 @@
                         "${builtins.toString modulesPath}/virtualisation/qemu-vm.nix"
                       ];
 
-                      services.desktopManager.cosmic.enable = true;
-                      services.displayManager.cosmic-greeter.enable = true;
-
-                      services.flatpak.enable = true;
-                      services.gnome.gnome-keyring.enable = true;
-
                       environment.systemPackages =
                         with pkgs;
                         [
-                          andromeda
-                          chronos
-                          cosmic-ext-applet-caffeine
-                          cosmic-ext-applet-clipboard-manager
-                          cosmic-ext-applet-emoji-selector
-                          cosmic-ext-applet-external-monitor-brightness
-                          cosmic-ext-calculator
-                          cosmic-ext-ctl
-                          examine
-                          forecast
-                          tasks
-                          cosmic-ext-tweaks
-                          (lib.lowPrio cosmic-comp)
-                          cosmic-reader
-                          drm_info
-                          firefox
-                          quick-webapps
-                          stellarshot
-                        ]
-                        ++ lib.optionals stdenv.hostPlatform.isx86 [
-                          observatory
+                           cosmic-ext-applet-clipboard-manager
+                           cosmic-ext-applet-external-monitor-brightness
+                           cosmic-ext-applet-privacy-indicator
+                           cosmic-ext-applet-caffeine
+                           cosmic-ext-applet-emoji-selector
+                           cosmic-ext-applet-ollama                         
                         ];
 
                       environment.sessionVariables = {
                         COSMIC_DATA_CONTROL_ENABLED = "1";
                       };
-
-                      systemd.packages = with pkgs; lib.optionals stdenv.hostPlatform.isx86 [ observatory ];
-                      systemd.services.monitord.wantedBy = [ "multi-user.target" ];
 
                       boot.kernelParams = [
                         "quiet"
