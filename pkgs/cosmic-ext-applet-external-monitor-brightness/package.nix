@@ -12,7 +12,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-external-monitor-brightness";
-  version = "0-unstable-2025-09-17";
+  version = "0.0.1-unstable-2025-09-17";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
