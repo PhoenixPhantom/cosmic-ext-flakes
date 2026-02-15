@@ -15,16 +15,16 @@
 }:
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-privacy-indicator";
-  version = "0.1.2-unstable-2025-07-03";
+  version = "0.2.0-unstable-2026-02-10";
 
   src = fetchFromGitHub {
     owner = "D-Brox";
     repo = "cosmic-ext-applet-privacy-indicator";
-    rev = "2d3b0efec5a95cf704e414f6e3005641f3aa3666";
-    hash = "sha256-iTdCn5IbOs+g9MeC+EDUGSYxlHTrmhouvL7Y6Y3rK/M=";
+    rev = "e69833cf8b31813d5468da7eeea6311f1621d702";
+    hash = "sha256-LivssKbrzAO4kuoNcE6evs4etaiFgH0UWeOSzHtgd1A=";
   };
 
-  cargoHash = "sha256-Tbcjnbjyo+FoYtRe5KnPiEzV+1PkzHOnbVDRe/pJul0=";
+  cargoHash = "sha256-Ul17dBobjheF4wUFx/leb0XkyXjqBdOfM41e4yBYHio=";
 
   nativeBuildInputs = [
     libcosmicAppHook
